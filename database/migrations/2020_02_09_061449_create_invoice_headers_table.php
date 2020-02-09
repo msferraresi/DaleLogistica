@@ -14,7 +14,12 @@ class CreateInvoiceHeadersTable extends Migration
     public function up()
     {
         Schema::create('invoice_headers', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->unsignedInteger('id_client');
+            $table->foreign('id_client')->references('id')->on('clients');
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users');            
+            $table->softDeletes(); 
             $table->timestamps();
         });
     }

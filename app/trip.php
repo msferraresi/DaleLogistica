@@ -5,13 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class localidades extends Model
+class trip extends Model
 {
     use SoftDeletes;
     
     protected $table = 'trips';
 
-    protected $fillable = ['id_zona','name','kilometers'];
+    protected $fillable = ['id_from','id_to'];
 
     protected $dates = ['deleted_at'];
+
 }

@@ -15,5 +15,7 @@ class DatabaseSeeder extends Seeder
          $this->call(ZonasTableSeeder::class);
          $this->call(LocalidadesTableSeeder::class);
          $this->call(RolesTableSeeder::class);
+         $this->call(CondicionIvaTableSeeder::class);
+         $this->call(TypePhoneTableSeeder::class);
     }
 }
