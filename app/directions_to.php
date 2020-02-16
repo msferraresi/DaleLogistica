@@ -14,5 +14,12 @@ class directions_to extends Model
     protected $fillable = ['id_client','calle', 'numero', 'piso', 'depto', 'area', 'sector', 'comentarios', 'latitud', 'longitud'];
 
     protected $dates = ['deleted_at'];
+
+    public function clients(){
+        return $this->hasMany(clients::class, 'id');
+    }
+
+
+
 }
    

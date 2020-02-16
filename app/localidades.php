@@ -8,10 +8,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class localidades extends Model
 {
     use SoftDeletes;
-    
-    protected $table = 'trips';
 
-    protected $fillable = ['id_zona','name','kilometers'];
+    protected $table = 'localidades';
+
+    protected $fillable = ['id_zona', 'name', 'kilometers'];
 
     protected $dates = ['deleted_at'];
+
+    public function zona()
+    {
+        return $this->belongsTo(zonas::class, 'id', 'id_zona');
+    }
 }
